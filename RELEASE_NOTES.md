@@ -19,4 +19,4 @@ First public Diamond Radio ATS Mini firmware release, with verified over-the-air
 
 ## Important
 
-This is a beta release for hardware testing. Back up the existing firmware and keep a known-good application in the other dual-boot slot. Select the image matching the radio's flash capacity and never overwrite the Diamond factory boot manager.
+Back up the existing firmware and keep a known-good application in the other dual-boot slot. Select the image matching the radio's flash capacity and never overwrite the Diamond factory boot manager.
