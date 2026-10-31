@@ -1,12 +1,12 @@
 {
   "project": "diamond_mini",
   "version": "1.0.1",
-  "build": 1,
+  "build": 2,
   "notes": "First public release with FT8, WiFi control and safe verified A/B OTA updates.",
   "url16": "https://github.com/khanfar/diamond-radio-ats-mini/releases/download/v1.0.1/diamond-mini-16mb.bin",
-  "size16": 2040272,
-  "sha256_16": "feaeed89aadfdc95b84edf10ec47bc9b592fb3afa3d198a4c95446023e4cd86b",
+  "size16": 2040368,
+  "sha256_16": "2b4f99f92a546c3da79cc289369ee2ba487fb97fe568a7b08014bdf80051077d",
   "url8": "https://github.com/khanfar/diamond-radio-ats-mini/releases/download/v1.0.1/diamond-mini-8mb.bin",
-  "size8": 2040272,
-  "sha256_8": "effe9a3fd78bd56a9e76cd9d2b3d8472d7d47c8715a39b61b6343c400b35c21b"
+  "size8": 2040368,
+  "sha256_8": "c7a3402893d8dc77df9fcc86b7ff85ba6ba4160f5a5be5cba7f480ecb8fbd56f"
 }
