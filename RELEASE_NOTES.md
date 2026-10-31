@@ -1,6 +1,14 @@
-# Diamond Radio ATS Mini 1.0.0 BETA
+# Diamond Radio ATS Mini 1.0.1
 
-First Diamond Radio ATS Mini beta release candidate.
+First public Diamond Radio ATS Mini firmware release, with verified over-the-air updates.
+
+## Highlights
+
+- Diamond Radio receiver interface for ATS Mini ESP32-S3/SI4732 hardware
+- FT8 decoding, station map, country information, and FT8 over WiFi
+- Safe A/B OTA updates with release notes, exact-size checks, and SHA-256 verification
+- Separate application images for 16 MB and 8 MB radios
+- WiFi receiver control, EiBi schedule support, and Diamond dual-boot compatibility
 
 ## Package
 
