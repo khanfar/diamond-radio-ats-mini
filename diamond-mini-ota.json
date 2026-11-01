@@ -1,12 +1,12 @@
 {
   "project": "diamond_mini",
-  "version": "1.0.1",
-  "build": 3,
-  "notes": "Adds FM/AM status-bar signal indicators and automatic restart after an up-to-date OTA check.",
-  "url16": "https://github.com/khanfar/diamond-radio-ats-mini/releases/download/v1.0.1-build3/diamond-mini-16mb.bin",
-  "size16": 2040752,
-  "sha256_16": "4d7da6b9098cfc6f9bc0dbbefce474a9d11c919daaab1dfb6f82a1ab85351f48",
-  "url8": "https://github.com/khanfar/diamond-radio-ats-mini/releases/download/v1.0.1-build3/diamond-mini-8mb.bin",
-  "size8": 2040752,
-  "sha256_8": "f77890415c161b649f424e0c97821ef7247f182ebe279620fbda1d66e8ae7773"
+  "version": "1.0.2",
+  "build": 4,
+  "notes": "Routes OTA through Diamond Dual Boot v2.0 so only the running slot is replaced and the other firmware stays unchanged.",
+  "url16": "https://github.com/khanfar/diamond-radio-ats-mini/releases/download/v1.0.2-build4/diamond-mini-16mb.bin",
+  "size16": 2030752,
+  "sha256_16": "1769b81d97407a71e20cb23e3b411f122d30c8f7149ddfe845d5800e644a4fab",
+  "url8": "https://github.com/khanfar/diamond-radio-ats-mini/releases/download/v1.0.2-build4/diamond-mini-8mb.bin",
+  "size8": 2030752,
+  "sha256_8": "5aaff2b28ef724d0702953f44c6bfca4d29469965f5da316ec3d0c33f67d17eb"
 }

@@ -5,7 +5,7 @@ Official firmware releases for the **Diamond Radio ATS Mini** receiver.
 - Product and Diamond-specific modifications: **M Khanfar**
 - Distribution: **freeware**; Diamond-specific source code is not distributed
 - Official website: **[diamondradio.web.app](https://diamondradio.web.app/)**
-- Current public firmware version: **1.0.1**
+- Current public firmware version: **1.0.2 — Build 4**
 
 This repository contains release binaries, update metadata, checksums, and license notices only. It is not a source-code repository.
 
@@ -34,9 +34,11 @@ Keep a known-good firmware in the other application slot when testing a new rele
 
 ## OTA updates
 
-On a radio running a release with OTA support, connect Wi-Fi to an internet-enabled network and open **Settings → OTA UPDATE**. The radio checks the official update manifest, asks for confirmation, downloads to the inactive application slot, and verifies the complete image size and SHA-256 checksum before selecting it for restart.
+With **Diamond Dual Boot v2.0** and Diamond Radio **v1.0.2 or newer**, connect Wi-Fi to an internet-enabled network and open **Settings → OTA UPDATE**. Diamond hands the update to the boot manager, which downloads the official release into the **current slot only**, verifies its exact size and SHA-256, and checks that the other slot stayed unchanged.
 
-A failed or interrupted download does not select the incomplete image. Keep the radio powered throughout installation.
+The manager's **OTA UPDATE → PUBLIC ATS MINI - SAFE OTA** path installs the latest public release into a user-selected slot and displays its version before installation. **SETTINGS → WIFI SETUP** scans networks and saves a manager-owned connection, so OTA also works into empty slots after a clean install. Typed password characters are visible for correction, saved passwords are not displayed, and the manager shows the connected IP address plus a green main-screen status indicator. Receiver-saved credentials can be reused too. A failed or cancelled installation does not select the incomplete image, but the selected slot may need reinstallation; the other slot is not intentionally modified. Keep the radio powered throughout installation.
+
+**Do not use the OTA button inside PUBLIC ATS MINI when you want to preserve the other slot.** Its built-in updater writes the opposite slot and will overwrite Diamond Radio if Diamond is installed there. Dual Boot cannot intercept that write. Always update PUBLIC ATS MINI through the manager's **SAFE OTA** path, selecting the same slot where it currently runs. Older manager and Diamond versions also lack the slot-preserving path.
 
 ## Legal and third-party notices
 
