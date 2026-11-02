@@ -1,12 +1,12 @@
 {
   "project": "diamond_mini",
-  "version": "1.0.3",
-  "build": 5,
-  "notes": "Improves AM/SSB gain and seeking, web preset naming, CW/RTTY stability, 87.5 MHz FM coverage, and fast progressive RDS names.",
-  "url16": "https://github.com/khanfar/diamond-radio-ats-mini/releases/download/v1.0.3-build5/diamond-mini-16mb.bin",
-  "size16": 2031120,
-  "sha256_16": "68c81d369ba5affd1f73590a245dc48d89ecf055fbb672cbf40a410a887aa3fd",
-  "url8": "https://github.com/khanfar/diamond-radio-ats-mini/releases/download/v1.0.3-build5/diamond-mini-8mb.bin",
-  "size8": 2031120,
-  "sha256_8": "513bc97540d3093425feb972c9985c10754ade51242e2ab2a9a378dc7ec68ef7"
+  "version": "1.0.4",
+  "build": 6,
+  "notes": "Adds NORMAL and fixed SAFE 13 dBm Wi-Fi transmit power controls for radios that need reduced Wi-Fi current.",
+  "url16": "https://github.com/khanfar/diamond-radio-ats-mini/releases/download/v1.0.4-build6/diamond-mini-16mb.bin",
+  "size16": 2031376,
+  "sha256_16": "e3fa4fe2b5144d4683df55e170e3b5eea1a07a6682d3b25806a02ce780d5a91b",
+  "url8": "https://github.com/khanfar/diamond-radio-ats-mini/releases/download/v1.0.4-build6/diamond-mini-8mb.bin",
+  "size8": 2031376,
+  "sha256_8": "992947a2f240c781883124ed22c5bba90b2dbc9ccebe4294e5c2265cddef46ae"
 }
