@@ -1,12 +1,12 @@
 {
   "project": "diamond_mini",
-  "version": "1.0.2",
-  "build": 4,
-  "notes": "Routes OTA through Diamond Dual Boot v2.0 so only the running slot is replaced and the other firmware stays unchanged.",
-  "url16": "https://github.com/khanfar/diamond-radio-ats-mini/releases/download/v1.0.2-build4/diamond-mini-16mb.bin",
-  "size16": 2030752,
-  "sha256_16": "1769b81d97407a71e20cb23e3b411f122d30c8f7149ddfe845d5800e644a4fab",
-  "url8": "https://github.com/khanfar/diamond-radio-ats-mini/releases/download/v1.0.2-build4/diamond-mini-8mb.bin",
-  "size8": 2030752,
-  "sha256_8": "5aaff2b28ef724d0702953f44c6bfca4d29469965f5da316ec3d0c33f67d17eb"
+  "version": "1.0.3",
+  "build": 5,
+  "notes": "Improves AM/SSB gain and seeking, web preset naming, CW/RTTY stability, 87.5 MHz FM coverage, and fast progressive RDS names.",
+  "url16": "https://github.com/khanfar/diamond-radio-ats-mini/releases/download/v1.0.3-build5/diamond-mini-16mb.bin",
+  "size16": 2031120,
+  "sha256_16": "68c81d369ba5affd1f73590a245dc48d89ecf055fbb672cbf40a410a887aa3fd",
+  "url8": "https://github.com/khanfar/diamond-radio-ats-mini/releases/download/v1.0.3-build5/diamond-mini-8mb.bin",
+  "size8": 2031120,
+  "sha256_8": "513bc97540d3093425feb972c9985c10754ade51242e2ab2a9a378dc7ec68ef7"
 }
