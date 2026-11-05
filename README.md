@@ -5,7 +5,7 @@ Official firmware releases for the **Diamond Radio ATS Mini** receiver.
 - Product and Diamond-specific modifications: **M Khanfar**
 - Distribution: **freeware**; Diamond-specific source code is not distributed
 - Official website: **[diamondradio.web.app](https://diamondradio.web.app/)**
-- Current public firmware version: **1.0.4 — Build 6**
+- Current public firmware version: **1.0.5 — Build 7**
 
 This repository contains release binaries, update metadata, checksums, and license notices only. It is not a source-code repository.
 
