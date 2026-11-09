@@ -11,6 +11,8 @@ This repository contains release binaries, update metadata, checksums, and licen
 
 ## Downloads
 
+For offline backup, restore, dual-boot installation, and slot maintenance, use the **[Diamond Radio ATS Mini Offline Tool for Windows](https://github.com/khanfar/diamond-radio-ats-mini-offline-tool)**.
+
 Choose the application image matching the radio's actual flash capacity:
 
 | File | Flash capacity | Maximum application size |
