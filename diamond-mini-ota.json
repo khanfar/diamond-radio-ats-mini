@@ -1,12 +1,12 @@
 {
   "project": "diamond_mini",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "build": 7,
-  "notes": "Adds EXTRA propagation, forecast, weather and rain radar; Japan Wide FM; tuning mute and NUMPAD; CB FT8 presets; EiBi transmitter details/maps; and receiver/UI fixes.",
-  "url16": "https://github.com/khanfar/diamond-radio-ats-mini/releases/download/v1.0.5-build7/diamond-mini-16mb.bin",
-  "size16": 2088272,
-  "sha256_16": "fb3954b61b003a8b0e1a09104d99574ca415b1ea54866e37996d8b53d424763f",
-  "url8": "https://github.com/khanfar/diamond-radio-ats-mini/releases/download/v1.0.5-build7/diamond-mini-8mb.bin",
-  "size8": 2088272,
-  "sha256_8": "ba52d0ed148bc9c954a9a18a4d0a0ea03ca623ac79c89ff801c1aee990b03f24"
+  "notes": "Adds FT8/FT4/FT2 live-waterfall decoders, rebuilt CW/RTTY, PSK31, SSTV, WEFAX, fast waterfall controls and palettes, frequency lock, temperature units, and receiver/stability fixes.",
+  "url16": "https://github.com/khanfar/diamond-radio-ats-mini/releases/download/v1.0.6-build7/diamond-mini-16mb.bin",
+  "size16": 2149504,
+  "sha256_16": "fe6c21108890c6d717b5ff8e92a855a7a9d2bd46a93497c3f748a83413b9b397",
+  "url8": "https://github.com/khanfar/diamond-radio-ats-mini/releases/download/v1.0.6-build7/diamond-mini-8mb.bin",
+  "size8": 2149504,
+  "sha256_8": "9370dc4351effae8d11f2bcb7133f2ad2fca13ae0046d4e33436d606a6ccd882"
 }

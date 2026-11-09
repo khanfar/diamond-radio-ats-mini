@@ -1,78 +1,133 @@
-# Diamond Radio ATS Mini 1.0.5 — Build 7
+# Diamond Radio ATS Mini 1.0.6 — Build 7
 
-A feature and reliability release with new EXTRA tools, expanded receiver controls, additional FT8 presets, and detailed EiBi transmitter information and maps.
+A major decoder, waterfall, and quality-of-life release. It adds live FT8/FT4/FT2 waterfall decoders, rebuilt CW/RTTY, PSK31, SSTV and WEFAX, fast standalone-waterfall controls, persistent frequency lock, temperature units, and multiple stability fixes.
 
-## EXTRA: propagation, forecast, weather, and rain radar
+## Frequency lock and weather units
 
-- Added **EXTRA** to the main menu and as an optional Quick-menu action. **VOLUME** is now the first functional main-menu item.
-- **PROPAGATION** shows an original world map with your saved or IP-derived QTH, UTC day/night shading, solar indices, and selectable 160/80/60/40/30/20/17/15/12/10 m band conditions.
-- **FORECAST** presents three days of NOAA three-hour Kp predictions as knob-selectable daily graphs.
-- **WEATHER** shows current conditions and a knob-selectable **NEXT 5 DAYS** view with daily conditions, high/low temperatures, and rain probability.
-- **RAIN MAP** combines OpenStreetMap and the latest RainViewer radar around your QTH. It includes QTH-centered zoom 3–7, a zoom badge, an accurate distance scale, full four-tile coverage, and visible refresh progress.
-- Rain maps are cached on the radio for fast reopening and offline viewing. Turning the knob updates the zoom display immediately and downloads only the final selected zoom after a short pause.
-- Network reliability was improved with dynamic TLS buffers, staged LittleFS downloads, bounded memory use, complete-request retries, clearer error diagnostics, and cached/stale-data fallbacks.
+### FREQ LOCK
 
-### Using EXTRA
+- Added **MENU → FREQ LOCK** and optional **SETTINGS → QUICK SET → FREQ LOCK**.
+- The ON/OFF state and current frequency are saved immediately and restored after restart.
+- While locked, ordinary rotation and press-and-turn digit tuning cannot change the frequency.
+- Rotate right/left to increase/decrease volume instead.
+- Hold the knob to open Quick List even when long-press is normally configured for NUMPAD. Short-press still opens the main menu, so both lock controls remain reachable.
+- Default is OFF; ordinary unlocked tuning is unchanged.
 
-Open **MENU → EXTRA**, then choose a tool. EXTRA needs Wi-Fi with internet access for fresh online data; the rain map can reopen its saved cache offline. Rotate the knob to change the propagation band, forecast day, weather page, or rain-map zoom. Short-press **PROPAGATION**, **FORECAST**, or **RAIN MAP** to refresh/retry. Hold the knob to go back.
+### TEMP UNIT
 
-## Receiver operation and display
+- Added **SETTINGS → TEMP UNIT → CELSIUS / FAHRENHEIT**.
+- The selection applies to current weather, daily high/low temperatures, and the five-day view.
+- Celsius remains the default, and the selection persists after restart.
 
-- Added **Settings → FM REGION**:
-  - **WORLD**: 87.5–108 MHz (default)
-  - **JAPAN**: 76–95 MHz Wide FM
-- FM region limits apply to tuning, seek/ATS, presets, band memory, and web control, and persist after restart.
-- Fixed SSB audio remaining muted after band/mode changes until bandwidth was adjusted.
-- Added **Settings → CALLSIGN**. An entered callsign appears in orange on the boot splash; leaving it empty preserves the standard splash.
-- Fixed favorites navigation: rotating now selects a slot without unexpectedly retuning an occupied favorite.
-- Fixed cropping of the final **M** in the **MHz** unit on long frequencies.
-- The left signal-history RSSI trace is now red; the SNR trace remains yellow.
+## Digital and image decoders
 
-### Using favorites and Quick FAV TUNE
+Open **MENU → DECODER** and choose from **CW, RTTY, PSK31, FT8, FT8 + WF, FT4 + WF, FT2 + WF, SSTV,** or **WEFAX**.
 
-In the favorites list, rotate to select a slot, short-press an occupied slot to tune it, long-press an empty slot to save the current station, and long-press an occupied slot to delete it.
+### FT8 + WF — new live-waterfall decoder
 
-For tune-as-you-scroll behavior, enable **Settings → QUICK SET → FAV TUNE**, then use **Quick → FAV TUNE** to switch it ON or OFF. Keep it OFF when you want to move safely from an occupied slot to an empty slot before saving.
+- Added an independent, higher-performance FT8 decoder with a real-time audio waterfall while preserving the original **FT8** mode as a separate choice.
+- Uses 12 kHz audio capture, oversampled FFT analysis, dual capture buffers, and a separate decoding task for responsive reception and display.
+- Shows decoded stations with country flags, message details, locator, distance, and bearing.
+- Includes the station list, detailed station view, offline map, QTH/route markers, band presets, visual noise filter, auto-hop, volume, clear, and exit controls.
+- The original FT8 decoder and its established behavior are not replaced.
 
-## Tuning mute, Soft Mute, and NUMPAD
+### FT4 + WF and FT2 + WF
 
-- Added persistent **Settings → TUNE MUTE**, default ON. It suppresses the tuning noise while turning the knob and restores audio shortly after tuning stops.
-- Fixed **SOFT MUTE OFF** remaining off after restart and made FM use the selected Soft Mute value instead of a fixed value.
-- Added an on-screen 12-key **NUMPAD** for direct frequency entry in the current band and mode.
-- Added **Settings → LONG PRESS** to choose whether holding the knob on the radio screen opens **QUICK LIST** or **NUMPAD**.
-- NUMPAD can also be added through **Settings → QUICK SET**.
+- Added **FT4 + WF** with FT4-specific timing, USB presets, live waterfall, decoding, station list/details/map, flags, auto-hop, palettes, noise filter, and audio-input selection.
+- Added **FT2 + WF** with continuous overlapping decode windows, FT2 USB presets, and the same Diamond station presentation and controls.
+- Fixed an FT2 capture-buffer overrun that could cause a reboot when exiting. FT8/FT4/FT2 waterfall sessions now enter and exit cleanly.
 
-### Using NUMPAD
+### Using FT8/FT4/FT2 + WF
 
-FM accepts MHz with up to three decimal digits; AM/LSB/USB accept integer kHz. Rotate to select a key and short-press to enter it or confirm **OK**. Long-press deletes a character; long-press with an empty entry cancels. Frequencies outside the current band are rejected. The page closes after 20 seconds without input.
+1. Choose the desired **+ WF** decoder from **MENU → DECODER**.
+2. Select a band preset. The radio tunes the listed frequency in USB automatically.
+3. Rotate on the main decoder screen for 100 Hz fine tuning.
+4. Short-press a decoded station for its information. Open **STATION LIST** from the hold menu to browse all heard stations.
+5. Hold for approximately half a second to open actions: **MAP, STATION LIST, CHANGE BAND, AUTO HOP, WATERFALL COLORS, NOISE FILTER, AUDIO INPUT, VOLUME, CLEAR,** and **EXIT**.
+6. In the map, rotate to move between located stations. Short-press to switch between station selection and zoom; rotate to zoom while zoom mode is active. Hold to return to decoding.
+7. **AUDIO INPUT → ADC** is the default and uses the radio's existing audio input without extra hardware. **MIC** is optional for suitable INMP441 wiring; ordinary reception should use ADC.
 
-## FT8 presets
+Wi-Fi is paused during these decoder sessions and restored on normal exit. If the radio is powered off during decoding, saved station credentials now authorize Wi-Fi reconnection at the next boot.
 
-- Added **11m CB — 27.245 MHz USB** and **11m CB — 27.265 MHz USB** to the FT8 band chooser.
-- Both are available when entering FT8 and through **CHANGE FT8 BAND** in the FT8 hold menu.
-- These are community-used CB digital frequencies, not official amateur-band allocations. The established FT8 decoder and DSP behavior are unchanged in this release.
+### CW, RTTY, and PSK31
 
-## EiBi transmitter details and offline map
+- Rebuilt **CW** and **RTTY** using proven audio DSP and added **PSK31**.
+- CW includes adaptive tone/noise tracking and automatic dot timing.
+- RTTY supports 45.45/50/75 baud, 170/450/850 Hz shifts, normal/reverse modes, and unshift-on-space.
+- PSK31 includes automatic/manual carrier control, carrier tracking, and squelch.
+- Each mode has a live spectrum, signal level, decoder status, and four automatically wrapping/scrolling text lines.
+- Fixed spectrum flicker, clipped lower text, row spacing, and bottom-edge layout problems.
 
-- EiBi schedule updates now also retrieve compact transmitter-site reference data. Normal schedule downloads remain usable if the site reference cannot be downloaded.
-- While tuned to an active scheduled station, the radio can show its transmitter site, host country, great-circle distance, and initial bearing from your saved QTH.
-- Long location information is arranged in two fitted rows beside the signal-history box without overlapping it.
-- Added optional **Settings → QUICK SET → EIBI MAP**. The map works offline and shows your QTH in red, the transmitter in gold, a great-circle route, and station/site/country with distance and bearing.
-- Added transmitter-centered **X1/X2/X4/X8** zoom.
-- Fixed Quick-menu selection so enabled actions remain selectable when other entries are hidden in AM/SSB.
+Rotate to tune CW/RTTY or adjust the PSK31 carrier. Hold for preset, mode, carrier/squelch, clear-text, volume, back, and exit actions as applicable to the selected decoder.
 
-### Using EIBI MAP
+### SSTV
 
-Update the EiBi database using the existing EiBi controls, tune to an active scheduled station with transmitter information, enable **EIBI MAP** in **Settings → QUICK SET**, then open **Quick → EIBI MAP**. Rotate to zoom and press or hold to return. Distance, bearing, and the QTH marker require a saved QTH; a missing QTH does not prevent viewing the transmitter location.
+- Added progressively drawn SSTV images with automatic VIS detection and manual mode selection.
+- Supported modes: **Martin M1/M2, Scottie S1/S2/DX, Robot 36/72, B/W 8/12/24/36,** and **PD50/90/120/160/180/240/290**.
+- Improved sync recovery to prevent repeated false **SIGNAL LOST** restarts during otherwise decodable Martin M1 reception.
+- Rotate to fine-tune in 50 Hz steps. Hold for **SSTV MODE, CLEAR IMAGE, VOLUME, EXIT SSTV,** and **BACK**.
 
-## Updating to v1.0.5
+### WEFAX
+
+- Added progressively drawn grayscale WEFAX reception with IOC 576, automatic phasing, calibrated black/white levels, stop-tone detection, and manual start.
+- Supports **120/90/60 LPM** line speeds.
+- Rotate to fine-tune in 50 Hz steps. Hold for **START NOW, STOP, LINE SPEED, CLEAR IMAGE, VOLUME, EXIT WEFAX,** and **BACK**.
+
+## Live audio waterfall
+
+The old muted signal-strength sweep has been replaced by a real-time audio waterfall. The current station remains audible and tunable while the waterfall is running.
+
+### Open and control the standalone waterfall
+
+- **Double-click the knob on the normal radio screen** to open it immediately.
+- It is also available through **MENU → WATERFALL**.
+- A single click on the radio screen still opens the menu after a short 350 ms double-click detection interval.
+- Rotate normally to tune the receiver.
+- **Hold once:** enter color mode. Rotate to change the palette and watch the existing waterfall recolor immediately.
+- **Hold again:** enter full-screen tuning mode. The bottom information/help area disappears and the waterfall expands to the bottom of the display. Rotate to tune.
+- **Hold again:** enter full-screen color mode and rotate to change colors.
+- **Hold once more:** return to the normal waterfall layout.
+- **Single-click in any waterfall mode:** exit to the radio.
+
+### Waterfall settings
+
+- **SETTINGS → WF SPEED:** **SLOW (160 ms/row)** or **FAST (48 ms/row)**. This controls the standalone and compact display waterfalls, not decoder protocol timing.
+- **SETTINGS → WF COLOR:** seven persistent shared palettes: **DIAMOND, PHOSPHOR, AMBER, ICE, BLUE, VIOLET,** and **SUNSET**.
+- The same palette is used by the standalone waterfall, compact SIGNAL BOX waterfall, and FT8/FT4/FT2 + WF displays.
+- Fixed waterfall startup allocation, unstable in-page headers, and radio/menu flicker or ghosting after exit.
+
+## Main-screen SIGNAL BOX waterfall
+
+- Added **SETTINGS → SIGNAL BOX → GRAPH / WATERFALL**.
+- **GRAPH** preserves the red RSSI and yellow SNR history display.
+- **WATERFALL** places a live audio waterfall inside the left signal box while retaining the normal radio page and controls.
+- WF SPEED and WF COLOR also control this compact view.
+- Fixed incorrect compact-waterfall appearance after powering on directly into FM.
+
+## EXTRA and rain-map reliability
+
+- Added **EXTRA → EXIT** for a direct return to the radio.
+- Rain downloads now cancel cooperatively when leaving, clean partial files, and avoid late redraws from cancelled work.
+- Fixed persistent radio/menu flicker and ghost shadows after leaving RAIN MAP by protecting the display framebuffer from network-timer heap fragmentation.
+- Rain caching, QTH-centered zoom, offline reopening, propagation, forecast, and weather behavior remain available as in v1.0.5.
+
+## Receiver coverage and other fixes
+
+- Extended **CB** and **SW ALL** upper coverage to include **27.455 MHz**.
+- Preserved existing band indices, tuning steps, decoder presets, and modulation behavior.
+- Saved Wi-Fi station credentials now trigger reconnection after reboot even if power was removed while a decoder had temporarily paused Wi-Fi.
+- Advanced decoder/waterfall workspaces are allocated per session and released on exit; multiple memory, task-shutdown, and display-lifetime faults were corrected.
+
+## Updating to v1.0.6
 
 Connect the radio to an internet-enabled Wi-Fi network. Use either:
 
 - **Diamond Dual Boot → OTA UPDATE**, or
 - **Diamond Radio → Settings → OTA UPDATE**.
 
-With Diamond Dual Boot v2.0 or newer, Diamond's OTA path updates only the current Diamond slot and verifies the downloaded image. Keep the radio powered and connected throughout the update. Keeping a known-good firmware in the other slot is recommended.
+With Diamond Dual Boot v2.0 or newer, Diamond's OTA path updates only the current Diamond slot and verifies the downloaded image's exact size and SHA-256. Keep the radio powered and connected throughout the update. Keeping a known-good firmware in the other slot is recommended.
+
+For manual installation, download the application image matching the radio's actual **16 MB or 8 MB** flash capacity and install it into an application slot using the official Diamond tools. Never overwrite the factory boot-manager partition.
 
 **Do not use the OTA button inside PUBLIC ATS MINI when you want to preserve the other slot.** Its built-in updater writes the opposite slot and can overwrite Diamond Radio. Update PUBLIC ATS MINI only through the manager's **PUBLIC ATS MINI - SAFE OTA** path, selecting the same slot where it currently runs.
 
@@ -81,6 +136,6 @@ With Diamond Dual Boot v2.0 or newer, Diamond's OTA path updates only the curren
 - Separate 16 MB and 8 MB ESP32-S3 application images
 - OTA metadata with exact image sizes and SHA-256 hashes
 - `SHA256SUMS.txt` for download verification
-- Upstream MIT license, Diamond freeware notice, and third-party notices
+- Upstream MIT license, Diamond freeware notice, and third-party notices, including the new DSP and KISS FFT attributions
 
 The images are not interchangeable. Select the image matching the radio's actual flash capacity and never overwrite the Diamond factory boot-manager partition.

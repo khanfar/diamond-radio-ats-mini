@@ -37,6 +37,12 @@ Diamond branding or distribution terms.
   supplied by the ESP-IDF release.
 - ft8_lib: Kārlis Goba, MIT. Used for FT8 message packing, candidate search,
   CRC and LDPC decoding. Full text: `THIRD_PARTY_LICENSES/FT8_LIB.txt`.
+- CW, RTTY, PSK31, SSTV and WEFAX audio capture and DSP, plus FT8/FT4/FT2 + WF audio
+  capture and DSP scheduling: ESP32-SI4732 Radio extended edition, MIT; notice
+  in `THIRD_PARTY_LICENSES/DISPLAY_PORT.txt`.
+- KISS FFT: Mark Borgerding, BSD three-condition license. Used by the
+  CW/RTTY/PSK31 and FT8/FT4/FT2 + WF spectrum analysis engines. Full text:
+  `THIRD_PARTY_LICENSES/KISS_FFT.txt`.
 
 The on-device Legal page provides the principal upstream MIT notice and
 component attribution. These release files provide the longer license texts.
