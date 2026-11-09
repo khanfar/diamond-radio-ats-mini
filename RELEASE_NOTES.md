@@ -25,17 +25,16 @@ Open **MENU → DECODER** and choose from **CW, RTTY, PSK31, FT8, FT8 + WF, FT4 
 
 ### FT8 + WF — new live-waterfall decoder
 
-- Added an independent, higher-performance FT8 decoder with a real-time audio waterfall while preserving the original **FT8** mode as a separate choice.
-- Uses 12 kHz audio capture, oversampled FFT analysis, dual capture buffers, and a separate decoding task for responsive reception and display.
+- Added an independent, higher-performance FT8 decoder with a smooth real-time audio waterfall and responsive controls, while preserving the original **FT8** mode as a separate choice.
 - Shows decoded stations with country flags, message details, locator, distance, and bearing.
 - Includes the station list, detailed station view, offline map, QTH/route markers, band presets, visual noise filter, auto-hop, volume, clear, and exit controls.
 - The original FT8 decoder and its established behavior are not replaced.
 
 ### FT4 + WF and FT2 + WF
 
-- Added **FT4 + WF** with FT4-specific timing, USB presets, live waterfall, decoding, station list/details/map, flags, auto-hop, palettes, noise filter, and audio-input selection.
-- Added **FT2 + WF** with continuous overlapping decode windows, FT2 USB presets, and the same Diamond station presentation and controls.
-- Fixed an FT2 capture-buffer overrun that could cause a reboot when exiting. FT8/FT4/FT2 waterfall sessions now enter and exit cleanly.
+- Added **FT4 + WF** with USB presets, live waterfall, decoding, station list/details/map, flags, auto-hop, palettes, noise filter, and audio-input selection.
+- Added **FT2 + WF** with responsive decoding, FT2 USB presets, and the same Diamond station presentation and controls.
+- Fixed a problem that could cause a reboot when exiting FT2 + WF. FT8/FT4/FT2 waterfall sessions now enter and exit cleanly.
 
 ### Using FT8/FT4/FT2 + WF
 
@@ -51,8 +50,8 @@ Wi-Fi is paused during these decoder sessions and restored on normal exit. If th
 
 ### CW, RTTY, and PSK31
 
-- Rebuilt **CW** and **RTTY** using proven audio DSP and added **PSK31**.
-- CW includes adaptive tone/noise tracking and automatic dot timing.
+- Rebuilt **CW** and **RTTY** for improved reception and added **PSK31**.
+- CW automatically tracks the received tone and sending speed.
 - RTTY supports 45.45/50/75 baud, 170/450/850 Hz shifts, normal/reverse modes, and unshift-on-space.
 - PSK31 includes automatic/manual carrier control, carrier tracking, and squelch.
 - Each mode has a live spectrum, signal level, decoder status, and four automatically wrapping/scrolling text lines.
@@ -81,7 +80,7 @@ The old muted signal-strength sweep has been replaced by a real-time audio water
 
 - **Double-click the knob on the normal radio screen** to open it immediately.
 - It is also available through **MENU → WATERFALL**.
-- A single click on the radio screen still opens the menu after a short 350 ms double-click detection interval.
+- A single click on the radio screen still opens the menu after a short double-click detection interval.
 - Rotate normally to tune the receiver.
 - **Hold once:** enter color mode. Rotate to change the palette and watch the existing waterfall recolor immediately.
 - **Hold again:** enter full-screen tuning mode. The bottom information/help area disappears and the waterfall expands to the bottom of the display. Rotate to tune.
@@ -94,7 +93,7 @@ The old muted signal-strength sweep has been replaced by a real-time audio water
 - **SETTINGS → WF SPEED:** **SLOW (160 ms/row)** or **FAST (48 ms/row)**. This controls the standalone and compact display waterfalls, not decoder protocol timing.
 - **SETTINGS → WF COLOR:** seven persistent shared palettes: **DIAMOND, PHOSPHOR, AMBER, ICE, BLUE, VIOLET,** and **SUNSET**.
 - The same palette is used by the standalone waterfall, compact SIGNAL BOX waterfall, and FT8/FT4/FT2 + WF displays.
-- Fixed waterfall startup allocation, unstable in-page headers, and radio/menu flicker or ghosting after exit.
+- Fixed waterfall startup failures, unstable in-page headers, and radio/menu flicker or ghosting after exit.
 
 ## Main-screen SIGNAL BOX waterfall
 
@@ -107,16 +106,16 @@ The old muted signal-strength sweep has been replaced by a real-time audio water
 ## EXTRA and rain-map reliability
 
 - Added **EXTRA → EXIT** for a direct return to the radio.
-- Rain downloads now cancel cooperatively when leaving, clean partial files, and avoid late redraws from cancelled work.
-- Fixed persistent radio/menu flicker and ghost shadows after leaving RAIN MAP by protecting the display framebuffer from network-timer heap fragmentation.
+- Leaving RAIN MAP stops unnecessary download activity and prevents stale screen updates.
+- Fixed persistent radio/menu flicker and ghost shadows after leaving RAIN MAP.
 - Rain caching, QTH-centered zoom, offline reopening, propagation, forecast, and weather behavior remain available as in v1.0.5.
 
 ## Receiver coverage and other fixes
 
 - Extended **CB** and **SW ALL** upper coverage to include **27.455 MHz**.
-- Preserved existing band indices, tuning steps, decoder presets, and modulation behavior.
+- Existing bands, tuning steps, decoder presets, and modulation behavior remain unchanged.
 - Saved Wi-Fi station credentials now trigger reconnection after reboot even if power was removed while a decoder had temporarily paused Wi-Fi.
-- Advanced decoder/waterfall workspaces are allocated per session and released on exit; multiple memory, task-shutdown, and display-lifetime faults were corrected.
+- Improved decoder and waterfall stability, including reliable exit and re-entry.
 
 ## Updating to v1.0.6
 
@@ -136,6 +135,6 @@ For manual installation, download the application image matching the radio's act
 - Separate 16 MB and 8 MB ESP32-S3 application images
 - OTA metadata with exact image sizes and SHA-256 hashes
 - `SHA256SUMS.txt` for download verification
-- Upstream MIT license, Diamond freeware notice, and third-party notices, including the new DSP and KISS FFT attributions
+- Upstream MIT license, Diamond freeware notice, and updated third-party notices
 
 The images are not interchangeable. Select the image matching the radio's actual flash capacity and never overwrite the Diamond factory boot-manager partition.
