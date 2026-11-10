@@ -44,6 +44,12 @@ Diamond Radio **v1.0.4** adds **Settings → WI-FI POWER**: NORMAL preserves the
 
 **Do not use the OTA button inside PUBLIC ATS MINI when you want to preserve the other slot.** Its built-in updater writes the opposite slot and will overwrite Diamond Radio if Diamond is installed there. Dual Boot cannot intercept that write. Always update PUBLIC ATS MINI through the manager's **SAFE OTA** path, selecting the same slot where it currently runs. Older manager and Diamond versions also lack the slot-preserving path.
 
+## Companion projects
+
+- [Diamond Radio ATS Mini Offline Tool](https://github.com/khanfar/diamond-radio-ats-mini-offline-tool) — offline dual-boot installation, backup, restore, and slot maintenance.
+- [Diamond Radio ATS-25 Offline Tool](https://github.com/khanfar/diamond-radio-ats25-offline-tool) — ATS-25 firmware installation, backup, restore, maintenance, and offline EiBi Manager.
+- [Diamond Radio ATS-25 USB PC Control](https://github.com/khanfar/diamond-radio-ats25-pc-control) — offline receiver control, decodes, favorites, and FT8 map.
+
 ## Legal and third-party notices
 
 Diamond Radio ATS Mini is based on the MIT-licensed GNBD/miniradio receiver framework and includes third-party components. Their copyright and license notices are preserved in:
