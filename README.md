@@ -50,6 +50,12 @@ Diamond Radio **v1.0.4** adds **Settings → WI-FI POWER**: NORMAL preserves the
 - [Diamond Radio ATS-25 Offline Tool](https://github.com/khanfar/diamond-radio-ats25-offline-tool) — ATS-25 firmware installation, backup, restore, maintenance, and offline EiBi Manager.
 - [Diamond Radio ATS-25 USB PC Control](https://github.com/khanfar/diamond-radio-ats25-pc-control) — offline receiver control, decodes, favorites, and FT8 map.
 
+## Community
+
+- Telegram: https://t.me/+aftBqV_qRMlkZDVi
+- Facebook: https://www.facebook.com/share/g/1EpCchUdzj/
+- YouTube: https://www.youtube.com/@DiamondRadioOfficial
+
 ## Legal and third-party notices
 
 Diamond Radio ATS Mini is based on the MIT-licensed GNBD/miniradio receiver framework and includes third-party components. Their copyright and license notices are preserved in:
