@@ -5,9 +5,16 @@ Official firmware releases for the **Diamond Radio ATS Mini** receiver.
 - Product and Diamond-specific modifications: **M Khanfar**
 - Distribution: **freeware**; Diamond-specific source code is not distributed
 - Official website: **[diamondradio.web.app](https://diamondradio.web.app/)**
-- Current public firmware version: **1.0.6 — Build 7**
+- Current public firmware version: **1.0.7 — Build 8**
 
 This repository contains release binaries, update metadata, checksums, and license notices only. It is not a source-code repository.
+
+## Online USB tools
+
+- [PC Control](https://diamondradio.web.app/pc-control.html) — receiver control, live FM FFT bars, and scrolling audio waterfall.
+- [FT8 Live Map](https://diamondradio.web.app/ft8.html) — live FT8/FT4 + WF station data and map.
+
+These Mini integrations are under active development. Closing or reloading the final browser tab that owns the Mini USB connection can reboot the radio; see the current release notes for the recommended temporary workflow.
 
 ## Downloads
 

@@ -1,12 +1,12 @@
 {
   "project": "diamond_mini",
-  "version": "1.0.6",
-  "build": 7,
-  "notes": "Adds FT8/FT4/FT2 live-waterfall decoders, rebuilt CW/RTTY, PSK31, SSTV, WEFAX, fast waterfall controls and palettes, frequency lock, temperature units, and receiver/stability fixes.",
-  "url16": "https://github.com/khanfar/diamond-radio-ats-mini/releases/download/v1.0.6-build7/diamond-mini-16mb.bin",
-  "size16": 2149504,
-  "sha256_16": "fe6c21108890c6d717b5ff8e92a855a7a9d2bd46a93497c3f748a83413b9b397",
-  "url8": "https://github.com/khanfar/diamond-radio-ats-mini/releases/download/v1.0.6-build7/diamond-mini-8mb.bin",
-  "size8": 2149504,
-  "sha256_8": "9370dc4351effae8d11f2bcb7133f2ad2fca13ae0046d4e33436d606a6ccd882"
+  "version": "1.0.7",
+  "build": 8,
+  "notes": "Adds ATS Mini USB PC Control, FM FFT and live waterfall, FT8 Live Map support, and seek fixes. Browser tools remain under development.",
+  "url16": "https://github.com/khanfar/diamond-radio-ats-mini/releases/download/v1.0.7-build8/diamond-mini-16mb.bin",
+  "size16": 2155488,
+  "sha256_16": "cda914f28d61f9826b04b48b3a8b8f550502d7f10a8971d0d1bb5e73975992a2",
+  "url8": "https://github.com/khanfar/diamond-radio-ats-mini/releases/download/v1.0.7-build8/diamond-mini-8mb.bin",
+  "size8": 2155488,
+  "sha256_8": "ace5fc742d472a22ae343f2e65ba7af67715a27954281f4b8134dcd0807fc3b6"
 }

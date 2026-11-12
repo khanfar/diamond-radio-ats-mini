@@ -1,125 +1,60 @@
-# Diamond Radio ATS Mini 1.0.6 — Build 7
+# Diamond Radio ATS Mini 1.0.7 — Build 8
 
-A major decoder, waterfall, and quality-of-life release. It adds live FT8/FT4/FT2 waterfall decoders, rebuilt CW/RTTY, PSK31, SSTV and WEFAX, fast standalone-waterfall controls, persistent frequency lock, temperature units, and multiple stability fixes.
+This release adds ATS Mini support to Diamond's USB **PC Control** and **FT8 Live Map** website tools, including live FM audio FFT bars, a scrolling audio spectrum/waterfall, receiver controls, and a seek fix.
 
-## Frequency lock and weather units
+## What's new
 
-### FREQ LOCK
+### ATS Mini USB PC Control
 
-- Added **MENU → FREQ LOCK** and optional **SETTINGS → QUICK SET → FREQ LOCK**.
-- The ON/OFF state and current frequency are saved immediately and restored after restart.
-- While locked, ordinary rotation and press-and-turn digit tuning cannot change the frequency.
-- Rotate right/left to increase/decrease volume instead.
-- Hold the knob to open Quick List even when long-press is normally configured for NUMPAD. Short-press still opens the main menu, so both lock controls remain reachable.
-- Default is OFF; ordinary unlocked tuning is unchanged.
+Control the receiver from a desktop computer while its normal screen and physical controls remain available:
 
-### TEMP UNIT
+- Tune FM and HF frequencies.
+- Select AM, LSB, or USB where applicable.
+- Adjust volume, mute, bandwidth, tuning step, AGC/ATT, and BFO.
+- Use SEEK UP and SEEK DOWN. Fixed a timing bug that could acknowledge a seek command without moving from the original station.
+- Open supported CW, RTTY, FT8 + WF, FT4 + WF, and FT2 + WF decoder pages from the computer.
+- View live signal level, frequency, mode, RDS information, decoder text, and station data.
 
-- Added **SETTINGS → TEMP UNIT → CELSIUS / FAHRENHEIT**.
-- The selection applies to current weather, daily high/low temperatures, and the five-day view.
-- Celsius remains the default, and the selection persists after restart.
+### FM FFT and live website waterfall
 
-## Digital and image decoders
+- FM stations now have live audio FFT bars in the PC Control FM view.
+- The existing PC Control spectrum and scrolling waterfall now support ATS Mini in FM and HF.
+- The radio remains audible and tunable while the website display is active.
+- Opening a supported waterfall decoder safely transfers the display feed to that session; returning to the radio restores the ordinary website stream.
+- No extra wiring or hardware modification is required.
 
-Open **MENU → DECODER** and choose from **CW, RTTY, PSK31, FT8, FT8 + WF, FT4 + WF, FT2 + WF, SSTV,** or **WEFAX**.
+The website waterfall is the computer's live audio-spectrum view. The separate **3D** button for the ATS-25 radio screen is not used on ATS Mini.
 
-### FT8 + WF — new live-waterfall decoder
+### FT8 Live Map integration
 
-- Added an independent, higher-performance FT8 decoder with a smooth real-time audio waterfall and responsive controls, while preserving the original **FT8** mode as a separate choice.
-- Shows decoded stations with country flags, message details, locator, distance, and bearing.
-- Includes the station list, detailed station view, offline map, QTH/route markers, band presets, visual noise filter, auto-hop, volume, clear, and exit controls.
-- The original FT8 decoder and its established behavior are not replaced.
+FT8 + WF and FT4 + WF can send accepted decodes to the existing Diamond FT8 Live Map page for station details, flags, locators, and map display.
 
-### FT4 + WF and FT2 + WF
+## How to use PC Control
 
-- Added **FT4 + WF** with USB presets, live waterfall, decoding, station list/details/map, flags, auto-hop, palettes, noise filter, and audio-input selection.
-- Added **FT2 + WF** with responsive decoding, FT2 USB presets, and the same Diamond station presentation and controls.
-- Fixed a problem that could cause a reboot when exiting FT2 + WF. FT8/FT4/FT2 waterfall sessions now enter and exit cleanly.
+1. Connect the ATS Mini to the computer with a data-capable USB cable.
+2. Open **[Diamond Radio PC Control](https://diamondradio.web.app/pc-control.html)** in a desktop browser with Web Serial support, such as Chrome or Edge.
+3. Click **CONNECT**, select the ATS Mini USB port, and confirm. Unlike ATS-25, the Mini does not need a PC-connection setting enabled first.
+4. On an FM station, open the FM view to see the live FFT bars. The **WATERFALL** card starts automatically after connection.
+5. Tune or change controls normally. Click **DISCONNECT** when finished.
 
-### Using FT8/FT4/FT2 + WF
+## How to use FT8 Live Map
 
-1. Choose the desired **+ WF** decoder from **MENU → DECODER**.
-2. Select a band preset. The radio tunes the listed frequency in USB automatically.
-3. Rotate on the main decoder screen for 100 Hz fine tuning.
-4. Short-press a decoded station for its information. Open **STATION LIST** from the hold menu to browse all heard stations.
-5. Hold for approximately half a second to open actions: **MAP, STATION LIST, CHANGE BAND, AUTO HOP, WATERFALL COLORS, NOISE FILTER, AUDIO INPUT, VOLUME, CLEAR,** and **EXIT**.
-6. In the map, rotate to move between located stations. Short-press to switch between station selection and zoom; rotate to zoom while zoom mode is active. Hold to return to decoding.
-7. **AUDIO INPUT → ADC** is the default and uses the radio's existing audio input without extra hardware. **MIC** is optional for suitable INMP441 wiring; ordinary reception should use ADC.
+1. On the ATS Mini, open **MENU → DECODER → FT8 + WF** or **FT4 + WF** and start decoding on the desired band.
+2. Open **[Diamond FT8 Live Map](https://diamondradio.web.app/ft8.html)** in Chrome or Edge.
+3. Click **CONNECT** and select the same ATS Mini USB port.
+4. Accepted stations appear in the decode list and on the map as they are received.
 
-Wi-Fi is paused during these decoder sessions and restored on normal exit. If the radio is powered off during decoding, saved station credentials now authorize Wi-Fi reconnection at the next boot.
+## Development status and known browser-close issue
 
-### CW, RTTY, and PSK31
+**ATS Mini PC Control and FT8 website integration are still under active development.** A known native-USB/browser issue can make the ATS Mini reboot when the final browser tab that owns its USB connection is closed or reloaded. This can still happen after using DISCONNECT.
 
-- Rebuilt **CW** and **RTTY** for improved reception and added **PSK31**.
-- CW automatically tracks the received tone and sending speed.
-- RTTY supports 45.45/50/75 baud, 170/450/850 Hz shifts, normal/reverse modes, and unshift-on-space.
-- PSK31 includes automatic/manual carrier control, carrier tracking, and squelch.
-- Each mode has a live spectrum, signal level, decoder status, and four automatically wrapping/scrolling text lines.
-- Fixed spectrum flicker, clipped lower text, row spacing, and bottom-edge layout problems.
+For now, keep the original PC Control or FT8 tab open while using the radio. When following a website link, allow it to open in a new tab rather than closing the original. If the radio restarts after a page closes, reconnect normally; the firmware and saved settings remain installed.
 
-Rotate to tune CW/RTTY or adjust the PSK31 carrier. Hold for preset, mode, carrier/squelch, clear-text, volume, back, and exit actions as applicable to the selected decoder.
+We are continuing to investigate this browser/USB behavior using user feedback and hardware testing. Please report reproducible problems through the Diamond Radio community channels.
 
-### SSTV
+## Updating to v1.0.7
 
-- Added progressively drawn SSTV images with automatic VIS detection and manual mode selection.
-- Supported modes: **Martin M1/M2, Scottie S1/S2/DX, Robot 36/72, B/W 8/12/24/36,** and **PD50/90/120/160/180/240/290**.
-- Improved sync recovery to prevent repeated false **SIGNAL LOST** restarts during otherwise decodable Martin M1 reception.
-- Rotate to fine-tune in 50 Hz steps. Hold for **SSTV MODE, CLEAR IMAGE, VOLUME, EXIT SSTV,** and **BACK**.
-
-### WEFAX
-
-- Added progressively drawn grayscale WEFAX reception with IOC 576, automatic phasing, calibrated black/white levels, stop-tone detection, and manual start.
-- Supports **120/90/60 LPM** line speeds.
-- Rotate to fine-tune in 50 Hz steps. Hold for **START NOW, STOP, LINE SPEED, CLEAR IMAGE, VOLUME, EXIT WEFAX,** and **BACK**.
-
-## Live audio waterfall
-
-The old muted signal-strength sweep has been replaced by a real-time audio waterfall. The current station remains audible and tunable while the waterfall is running.
-
-### Open and control the standalone waterfall
-
-- **Double-click the knob on the normal radio screen** to open it immediately.
-- It is also available through **MENU → WATERFALL**.
-- A single click on the radio screen still opens the menu after a short double-click detection interval.
-- Rotate normally to tune the receiver.
-- **Hold once:** enter color mode. Rotate to change the palette and watch the existing waterfall recolor immediately.
-- **Hold again:** enter full-screen tuning mode. The bottom information/help area disappears and the waterfall expands to the bottom of the display. Rotate to tune.
-- **Hold again:** enter full-screen color mode and rotate to change colors.
-- **Hold once more:** return to the normal waterfall layout.
-- **Single-click in any waterfall mode:** exit to the radio.
-
-### Waterfall settings
-
-- **SETTINGS → WF SPEED:** **SLOW (160 ms/row)** or **FAST (48 ms/row)**. This controls the standalone and compact display waterfalls, not decoder protocol timing.
-- **SETTINGS → WF COLOR:** seven persistent shared palettes: **DIAMOND, PHOSPHOR, AMBER, ICE, BLUE, VIOLET,** and **SUNSET**.
-- The same palette is used by the standalone waterfall, compact SIGNAL BOX waterfall, and FT8/FT4/FT2 + WF displays.
-- Fixed waterfall startup failures, unstable in-page headers, and radio/menu flicker or ghosting after exit.
-
-## Main-screen SIGNAL BOX waterfall
-
-- Added **SETTINGS → SIGNAL BOX → GRAPH / WATERFALL**.
-- **GRAPH** preserves the red RSSI and yellow SNR history display.
-- **WATERFALL** places a live audio waterfall inside the left signal box while retaining the normal radio page and controls.
-- WF SPEED and WF COLOR also control this compact view.
-- Fixed incorrect compact-waterfall appearance after powering on directly into FM.
-
-## EXTRA and rain-map reliability
-
-- Added **EXTRA → EXIT** for a direct return to the radio.
-- Leaving RAIN MAP stops unnecessary download activity and prevents stale screen updates.
-- Fixed persistent radio/menu flicker and ghost shadows after leaving RAIN MAP.
-- Rain caching, QTH-centered zoom, offline reopening, propagation, forecast, and weather behavior remain available as in v1.0.5.
-
-## Receiver coverage and other fixes
-
-- Extended **CB** and **SW ALL** upper coverage to include **27.455 MHz**.
-- Existing bands, tuning steps, decoder presets, and modulation behavior remain unchanged.
-- Saved Wi-Fi station credentials now trigger reconnection after reboot even if power was removed while a decoder had temporarily paused Wi-Fi.
-- Improved decoder and waterfall stability, including reliable exit and re-entry.
-
-## Updating to v1.0.6
-
-Connect the radio to an internet-enabled Wi-Fi network. Use either:
+Connect the radio to an internet-enabled Wi-Fi network and use either:
 
 - **Diamond Dual Boot → OTA UPDATE**, or
 - **Diamond Radio → Settings → OTA UPDATE**.
@@ -135,6 +70,6 @@ For manual installation, download the application image matching the radio's act
 - Separate 16 MB and 8 MB ESP32-S3 application images
 - OTA metadata with exact image sizes and SHA-256 hashes
 - `SHA256SUMS.txt` for download verification
-- Upstream MIT license, Diamond freeware notice, and updated third-party notices
+- Upstream MIT license, Diamond freeware notice, and third-party notices
 
 The images are not interchangeable. Select the image matching the radio's actual flash capacity and never overwrite the Diamond factory boot-manager partition.
