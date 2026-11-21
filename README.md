@@ -5,14 +5,18 @@ Official firmware releases for the **Diamond Radio ATS Mini** receiver.
 - Product and Diamond-specific modifications: **M Khanfar**
 - Distribution: **freeware**; Diamond-specific source code is not distributed
 - Official website: **[diamondradio.web.app](https://diamondradio.web.app/)**
-- Current public firmware version: **1.0.7 — Build 8**
+- Current public firmware version: **1.0.8 — Build 9**
 
 This repository contains release binaries, update metadata, checksums, and license notices only. It is not a source-code repository.
 
 ## Online USB tools
 
-- [PC Control](https://diamondradio.web.app/pc-control.html) — receiver control, live FM FFT bars, and scrolling audio waterfall.
+- [PC Control](https://diamondradio.web.app/pc-control.html) — receiver control, live FM FFT bars, scrolling audio waterfall, and NAVTEX USB decoding.
 - [FT8 Live Map](https://diamondradio.web.app/ft8.html) — live FT8/FT4 + WF station data and map.
+
+NAVTEX also runs directly on the radio. Open **MENU → DECODER → NAVTEX**, choose a channel, and use the on-screen controls for volume, tuning step, direct frequency entry, and message scrolling. In PC Control, open **NAVTEX**, select a preset or enter the USB dial frequency, and click **TUNE NAVTEX**. **SAVE LOG** exports the received message as TXT; **NAV SCHED** provides the offline broadcast timetable and distance sorting.
+
+For ATS Mini, **radio volume 38** (approximately **60% in PC Control**) is a tested starting point, not a universal setting. Adjust during an active transmission for stable SYNC/LOCK and low ERR. Antenna, signal strength, interference, and environment affect the best setting; excessive volume can overload the decoder just as insufficient volume can make reception unreliable.
 
 These Mini integrations are under active development. Closing or reloading the final browser tab that owns the Mini USB connection can reboot the radio; see the current release notes for the recommended temporary workflow.
 
