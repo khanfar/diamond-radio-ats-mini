@@ -1,12 +1,12 @@
 {
   "project": "diamond_mini",
   "version": "1.0.8",
-  "build": 9,
-  "notes": "Adds NAVTEX on the radio and in PC Control, NAVTEX schedules and TXT export, plus continuous USB text for NAVTEX, CW and RTTY.",
-  "url16": "https://github.com/khanfar/diamond-radio-ats-mini/releases/download/v1.0.8-build9/diamond-mini-16mb.bin",
-  "size16": 2162208,
-  "sha256_16": "7609399cf6ae4c3322f917fc67dc892406b68ee2700d8e498e50e17dbc4e51e4",
-  "url8": "https://github.com/khanfar/diamond-radio-ats-mini/releases/download/v1.0.8-build9/diamond-mini-8mb.bin",
-  "size8": 2162208,
-  "sha256_8": "a7b684386b6a3cafb9e37715ed258bee2eace3d71332e6305e790cfb7e8405a6"
+  "build": 10,
+  "notes": "Improves EiBi downloads and reliability for Propagation, Forecast and Weather. Recommended for all ATS Mini users.",
+  "url16": "https://github.com/khanfar/diamond-radio-ats-mini/releases/download/v1.0.8-build10/diamond-mini-16mb.bin",
+  "size16": 2162704,
+  "sha256_16": "3fc658096e88ae59bf0749568e2e4330b4fe1a28aa44f079f02c0ef23be848c4",
+  "url8": "https://github.com/khanfar/diamond-radio-ats-mini/releases/download/v1.0.8-build10/diamond-mini-8mb.bin",
+  "size8": 2162704,
+  "sha256_8": "80171b7b28ff86fe5fa855584d4ba4398efbc04f8daf6a7f7f5d7c7fd2cb21c9"
 }

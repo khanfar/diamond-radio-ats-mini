@@ -1,2 +1,2 @@
-7609399cf6ae4c3322f917fc67dc892406b68ee2700d8e498e50e17dbc4e51e4  diamond-mini-16mb.bin
-a7b684386b6a3cafb9e37715ed258bee2eace3d71332e6305e790cfb7e8405a6  diamond-mini-8mb.bin
+3fc658096e88ae59bf0749568e2e4330b4fe1a28aa44f079f02c0ef23be848c4  diamond-mini-16mb.bin
+80171b7b28ff86fe5fa855584d4ba4398efbc04f8daf6a7f7f5d7c7fd2cb21c9  diamond-mini-8mb.bin

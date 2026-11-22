@@ -5,9 +5,15 @@ Official firmware releases for the **Diamond Radio ATS Mini** receiver.
 - Product and Diamond-specific modifications: **M Khanfar**
 - Distribution: **freeware**; Diamond-specific source code is not distributed
 - Official website: **[diamondradio.web.app](https://diamondradio.web.app/)**
-- Current public firmware version: **1.0.8 — Build 9**
+- Current public firmware version: **1.0.8 — Build 10**
 
 This repository contains release binaries, update metadata, checksums, and license notices only. It is not a source-code repository.
+
+## Latest update — Build 10
+
+This maintenance release improves the reliability of **EiBi downloads**, including transmitter information, and the **Propagation**, **Forecast**, and **Weather** features. No additional settings or hardware changes are required. Connect to internet-enabled Wi-Fi and use the features normally.
+
+See [`RELEASE_NOTES.md`](RELEASE_NOTES.md) for the user-facing update notes and installation guidance.
 
 ## Online USB tools
 
